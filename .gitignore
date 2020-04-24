@@ -1,0 +1,4 @@
+# Ignore output files
+target
+local.mk
+.DS_Store
