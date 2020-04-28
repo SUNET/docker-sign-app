@@ -1,7 +1,7 @@
 ![Logo](https://raw.githubusercontent.com/elegnamnden/technical-framework/master/img/eln-logo.png)
 
 ---
-# CURRENT BUILD VERSION = 1.0.0
+# CURRENT BUILD VERSION = 1.0.1
 ---
 # docker-sig-app
 
