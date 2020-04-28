@@ -76,7 +76,7 @@ Property | Value
 
 ## 3. Running the docker container
 
-The documentation folder contains a sample docker deploy script `deploy.sh`:
+The samples folder contains a sample docker deploy script `deploy.sh`:
 
 ```
 #!/bin/bash
