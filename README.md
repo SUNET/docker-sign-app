@@ -1,7 +1,6 @@
-![Logo](https://raw.githubusercontent.com/elegnamnden/technical-framework/master/img/eln-logo.png)
 
 ---
-# CURRENT BUILD VERSION = 1.0.0
+# CURRENT BUILD VERSION = 1.0.1
 ---
 # docker-sig-app
 
@@ -13,11 +12,11 @@ This repo contains build and deploy scripts for the SUNET electronic signing app
 4. Deploying the docker image as docker container.
 5. Setting up Shibboleth SP authentication
 
-The signservice application is provided as a Spring Boot application which is deployed to the maven repo at: [https://maven.eidastest.se](https://maven.eidastest.se/artifactory/webapp/#/home)
+The signing application is provided as a Spring Boot application which is deployed to the maven repo at: [https://maven.eidastest.se](https://maven.eidastest.se/artifactory/webapp/#/home)
 
 ## 1. Building docker file
 
-The docker build script "build.sh" builds a docker image for the metadata validator by performing the following actions:
+The docker build script "build.sh" builds a docker image for the signing application by performing the following actions:
 
 - Downloading the executable .jar file from maven repository
 - Downloading the signature (asc) on the metadata validator executable
@@ -76,7 +75,7 @@ Property | Value
 
 ## 3. Running the docker container
 
-The documentation folder contains a sample docker deploy script `deploy.sh`:
+The samples folder contains a sample docker deploy script `deploy.sh`:
 
 ```
 #!/bin/bash
