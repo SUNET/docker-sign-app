@@ -1,6 +1,6 @@
 
 ---
-# CURRENT BUILD VERSION = 1.0.2
+# CURRENT BUILD VERSION = 1.0.3
 ---
 # docker-sig-app
 
@@ -61,7 +61,7 @@ Property | Value
 --- | ---
 `sigsp.config.mode`  |  mode options are "dev", "test" or "prod". Affecting visual appearance
 `sigsp.config.title`  |  Title on all web pages. Note that åäöÅÄÖ must be specified as unicode characters. E.g "Bastj\u00E4nst f\u00F6r Elektronisk Underskrift"
-`server.port`  |  Set the server port for the service. If TLS is used (port 8443) then the TLS settings must also be settings
+`sigsp.config.login-button-html`  |  Optional property used to provide custom html for the login button. Example: `sigsp.config.login-button-html=<a href='../secure/main' class='btn btn-primary'>Login</a>``server.port`  |  Set the server port for the service. If TLS is used (port 8443) then the TLS settings must also be settings
 `tomcat.ajp.enabled`  |  true or false dependeing on whether AJP should be exposed
 `spring.servlet.multipart.max-file-size`  |  Sets the max file upload size. This value can be set to a maximum of 10 MB. Sizes larger than 10MB requires other measures to increase internal Spring Boot limitations.
 `sigsp.config.signpage`  |  Sets properties related to the sign page
@@ -71,6 +71,7 @@ Property | Value
 `signservice.config.default-sign-requester-id`  |  The EntityID of this application expressed as the sign requesting service in requests to the signing service.
 `signservice.config.sign-service-id`  |  The EntityID of the sign service  |
 `signservice.config.default-destination-url` |  The URL where the Sign Request to the sign service is sent.
+
 
 
 ## 3. Running the docker container
