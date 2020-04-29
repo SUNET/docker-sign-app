@@ -14,6 +14,15 @@ This repo contains build and deploy scripts for the SUNET electronic signing app
 
 The signing application is provided as a Spring Boot application which is deployed to the maven repo at: [https://maven.eidastest.se](https://maven.eidastest.se/artifactory/webapp/#/home)
 
+## 0. Using the pre-built docker image
+
+```bash
+# docker pull docker.sunet.se/upload-sign-app:<version>
+# docker pull docker.sunet.se/shibsp-ajp
+```
+
+The second image provides a useful ajp-enabled proxy service with shibboleth enabled.
+
 ## 1. Building docker file
 
 The docker build script "build.sh" builds a docker image for the signing application by performing the following actions:
@@ -34,6 +43,9 @@ Usage: build.sh [options...]
    -c, --clear            Clears the target directory after a successful build (default is to keep it)
    -h, --help             Prints this help
 ```
+
+There is a Makefile in the directory that simplifies the build. Just run 'make'. Note that this requires read access to
+the maven repository servers. If you don't have access, feel free to use the ready-made docker images instead.
 
 ## 2. Configuration
 The resources folder contains sample configuration data. The content of the `upload-sign-sp` folder illustrates a working example file structure to be placed in a directory specified in a suitable location reflected in the settings of the `application.properties` file in combination with the environment variable `SPRING_CONFIG_ADDITIONAL_LOCATION`.
@@ -78,16 +90,36 @@ Property | Value
 
 The samples folder contains a sample docker deploy script `deploy.sh`:
 
+This example assumes that metadata is maintained at /etc/metadata/swamid-idp-transitive.xml on the docker-host. This is best left to
+a cron-script instead of using shibboleths built-in mechanism for metadata refresh which is pretty slow.
+
+This is an illustration of the docker commands used - your environment may differ slightly - adjust accordingly!
+
+It is of course possible to use your own shibboleth/SAML frontend. The upload-sign-app assumes the normal AJP convention of passing
+all shibboleth attributes as request headers with the "AJP_" prefix. This is documented in the shibboleth wiki and implemented in 
+the shibsp-ajp container.
+
 ```
 #!/bin/bash
 
-echo Deploying docker containter upload-sig-app
-docker run -d --name upload-sig-app --restart=always \
-  -p 8080:8080 -p 8009:8009 \
-  -e "SPRING_CONFIG_ADDITIONAL_LOCATION=/opt/upload-sig-app/" \
+docker run --net docker -d --name sign-app-sp --restart=always \
+  -p 443:443 \
+  -e "SP_CONTACT=helpdesk@example.com" \
+  -e "METADATA_FILE=/etc/metadata/swamid-idp-transitive.xml" \
+  -e "BACKEND_URL=ajp://upload-sign-app:8009" \
+  -e "SP_HOSTNAME=signapp.exmple.com" \
+  -e "SP_ABOUT=/open/login" \
+  -e "PROTECTED_URL=/secure" \
+  -v "/etc/ssl:/etc/ssl" \
+  -v "/etc/metadata:/etc/metadata:ro" \
+  -v "/var/log:/var/log" \
+  docker.sunet.se/shibsp-ajp:latest
+
+docker run --net docker -d --name upload-sign-app --restart=always \
+  -e "SPRING_CONFIG_ADDITIONAL_LOCATION=/opt/upload-sign-app/" \
   -v /etc/localtime:/etc/localtime:ro \
-  -v /opt/docker/upload-sign-sp:/opt/upload-sig-app \
-  upload-sign-sp
+  -v /opt/docker/upload-sign-sp:/opt/upload-sign-app \
+  docker.sunet.se/upload-sign-app:1.0.3
 
 echo Done!
 ```
