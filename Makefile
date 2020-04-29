@@ -5,8 +5,8 @@ EIDAS_BUILD_ARGS := "--you --forgot --username --and --passw"
 all: build push
 
 build: 
-	./build.sh $(EIDAS_BUILD_ARGS) --version $(VERSION) -i docker-sign-sp --tag $(VERSION)
+	./build.sh $(EIDAS_BUILD_ARGS) --version $(VERSION) -i upload-sign-app --tag $(VERSION)
 
 push:
-	docker tag docker-sign-sp:$(VERSION) docker.sunet.se/docker-sign-sp:$(VERSION)
-	docker push docker.sunet.se/docker-sign-sp:$(VERSION)
+	docker tag upload-sign-app:$(VERSION) docker.sunet.se/upload-sign-app:$(VERSION)
+	docker push docker.sunet.se/upload-sign-app:$(VERSION)
