@@ -1,0 +1,16 @@
+<svg width="248" height="90" viewBox="0 0 248 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Frame 1">
+<g id="Signature label">
+<rect id="Rectangle 1" width="248" height="90" rx="4.8" fill="white"/>
+<g id="Electronically signed by ##SIGNERNAME## Date and time of signature ##SIGNTIME## Authenticated by ##IDP##">
+<text fill="#808080" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="7" font-weight="500" letter-spacing="0.01em"><tspan x="7.23333" y="14.3926">Electronically signed by&#13;&#10;</tspan><tspan x="7.23333" y="41.3926">Date and time of signature&#13;&#10;</tspan><tspan x="7.23333" y="68.3926">Authenticated by&#13;&#10;</tspan></text>
+<text fill="black" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="10" font-weight="300" letter-spacing="0em"><tspan x="7.23333" y="26.3926">##SIGNERNAME##&#13;&#10;</tspan><tspan x="7.23333" y="53.3926">##SIGNTIME##&#13;&#10;</tspan><tspan x="7.23333" y="80.3926">##IDP##</tspan></text>
+<text fill="black" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="10" font-weight="300" letter-spacing="0em"><tspan x="7.23333" y="31.3926">&#10;</tspan><tspan x="7.23333" y="58.3926">&#10;</tspan></text>
+</g>
+<g id="eduSign">
+<text fill="#909090" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="8" font-weight="500" letter-spacing="-0.04em"><tspan x="211.703" y="15.2344">edu</tspan></text>
+<text fill="#FF500D" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="8" font-weight="500" letter-spacing="-0.04em"><tspan x="224.001" y="15.2344">Sign</tspan></text>
+</g>
+</g>
+</g>
+</svg>
