@@ -1,4 +1,4 @@
-# Upload and sign application
+# Upload and sign application versions
 
 **Latest Current version: 1.0.4**
 
