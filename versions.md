@@ -1,6 +1,6 @@
 # Upload and sign application versions
 
-**Latest Current version: 1.0.4**
+**Latest Current version: 1.0.5**
 
 Version | Comment | Date
 ---|---|---
@@ -9,6 +9,7 @@ Version | Comment | Date
 1.0.2 | Redirect from root to open/login | 2020-04-29
 1.0.3 | Capability to customize login button   | 2020-04-29
 1.0.4 | UI update to eduSign style. Improved error page and login page | 2020-04-29
+1.0.5 | UI update | 2020-04-30
 
 ## Important Release Notes
 

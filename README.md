@@ -1,6 +1,6 @@
 
 ---
-# CURRENT BUILD VERSION = 1.0.4
+# CURRENT BUILD VERSION = 1.0.5
 ---
 # docker-sig-app
 
@@ -96,7 +96,7 @@ a cron-script instead of using shibboleths built-in mechanism for metadata refre
 This is an illustration of the docker commands used - your environment may differ slightly - adjust accordingly!
 
 It is of course possible to use your own shibboleth/SAML frontend. The upload-sign-app assumes the normal AJP convention of passing
-all shibboleth attributes as request headers with the "AJP_" prefix. This is documented in the shibboleth wiki and implemented in 
+all shibboleth attributes as request headers with the "AJP_" prefix. This is documented in the shibboleth wiki and implemented in
 the shibsp-ajp container.
 
 ```
