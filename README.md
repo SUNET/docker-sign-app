@@ -1,6 +1,6 @@
 
 ---
-# CURRENT BUILD VERSION = 1.0.3
+# CURRENT BUILD VERSION = 1.0.4
 ---
 # docker-sig-app
 
@@ -71,7 +71,7 @@ Property | Value
 `signservice.config.default-sign-requester-id`  |  The EntityID of this application expressed as the sign requesting service in requests to the signing service.
 `signservice.config.sign-service-id`  |  The EntityID of the sign service  |
 `signservice.config.default-destination-url` |  The URL where the Sign Request to the sign service is sent.
-
+`sigsp.config.signpage.image.include-identifier-in-name`  |  A value of true includes the user ID in the user name. E.g. "John Doe (id-of-john-doe)" when included in a PDF sign image. A value of false excludes the uer ID from the displayed name.
 
 
 ## 3. Running the docker container
