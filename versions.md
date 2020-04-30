@@ -1,4 +1,4 @@
-# Proxy Service versions
+# Upload and sign application
 
 **Latest Current version: 1.0.4**
 
