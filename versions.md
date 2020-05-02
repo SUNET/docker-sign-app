@@ -1,6 +1,6 @@
 # Upload and sign application versions
 
-**Latest Current version: 1.0.6**
+**Latest Current version: 1.0.7**
 
 Version | Comment | Date
 ---|---|---
@@ -11,6 +11,7 @@ Version | Comment | Date
 1.0.4 | UI update to eduSign style. Improved error page and login page | 2020-04-29
 1.0.5 | UI update | 2020-04-30
 1.0.6 | Configurable html title | 2020-05-02
+1.0.7 | Relaxed check for valid values in SAML attributes to handle complex attriubtes | 2020-05-02
 
 ## Important Release Notes
 
