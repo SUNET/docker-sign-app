@@ -1,6 +1,6 @@
 # Upload and sign application versions
 
-**Latest Current version: 1.0.5**
+**Latest Current version: 1.0.6**
 
 Version | Comment | Date
 ---|---|---
@@ -10,6 +10,7 @@ Version | Comment | Date
 1.0.3 | Capability to customize login button   | 2020-04-29
 1.0.4 | UI update to eduSign style. Improved error page and login page | 2020-04-29
 1.0.5 | UI update | 2020-04-30
+1.0.6 | Configurable html title | 2020-05-02
 
 ## Important Release Notes
 
@@ -57,3 +58,11 @@ Note that the color scheme for this verison has changed. This has caused the sig
 > `<h3 style="color: #FF500D">Underskrift</h3>`
 
 Finally, this version has moved the login button to the upper right corner of the login page and error pages has been updated to display information about what went wrong.
+
+
+## 1.0.6
+This version adds the application.property setting `sigsp.config.html.title` which sets the title element of the html page (in the head element).
+
+> Ex: sigsp.config.html.title=eduSign - s\u00E4ker digital underskrift
+
+Note that spceial characters must be represented by their unicode code as shown in this example for the letter "ä".

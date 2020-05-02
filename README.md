@@ -1,6 +1,6 @@
 
 ---
-# CURRENT BUILD VERSION = 1.0.5
+# CURRENT BUILD VERSION = 1.0.6
 ---
 # docker-sig-app
 
@@ -72,7 +72,8 @@ The `application.properties` file in the resources folder illustrates sensible d
 Property | Value
 --- | ---
 `sigsp.config.mode`  |  mode options are "dev", "test" or "prod". Affecting visual appearance
-`sigsp.config.title`  |  Title on all web pages. Note that åäöÅÄÖ must be specified as unicode characters. E.g "Bastj\u00E4nst f\u00F6r Elektronisk Underskrift"
+`sigsp.config.title`  |  Title on the front of the login page. Note that åäöÅÄÖ must be escaped as unicode characters. E.g "Bastj\u00E4nst f\u00F6r Elektronisk Underskrift"
+`sigsp.config.html.title`  |  The html head title of the html pages. Note that special characters must be unicode escaped as with the login page title above
 `sigsp.config.login-button-html`  |  Optional property used to provide custom html for the login button. Example: `sigsp.config.login-button-html=<a href='../secure/main' class='btn btn-primary'>Login</a>``server.port`  |  Set the server port for the service. If TLS is used (port 8443) then the TLS settings must also be settings
 `tomcat.ajp.enabled`  |  true or false dependeing on whether AJP should be exposed
 `spring.servlet.multipart.max-file-size`  |  Sets the max file upload size. This value can be set to a maximum of 10 MB. Sizes larger than 10MB requires other measures to increase internal Spring Boot limitations.
