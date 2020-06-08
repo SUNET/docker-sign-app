@@ -1,6 +1,6 @@
 # Upload and sign application versions
 
-**Latest Current version: 1.0.6**
+**Latest Current version: 1.0.8**
 
 Version | Comment | Date
 ---|---|---
@@ -11,6 +11,8 @@ Version | Comment | Date
 1.0.4 | UI update to eduSign style. Improved error page and login page | 2020-04-29
 1.0.5 | UI update | 2020-04-30
 1.0.6 | Configurable html title | 2020-05-02
+1.0.7 | Relaxed check for valid values in SAML attributes to handle complex attriubtes | 2020-05-02
+1.0.8 | Updated attribute parsing | 2020-05-18
 
 ## Important Release Notes
 
@@ -66,3 +68,12 @@ This version adds the application.property setting `sigsp.config.html.title` whi
 > Ex: sigsp.config.html.title=eduSign - s\u00E4ker digital underskrift
 
 Note that spceial characters must be represented by their unicode code as shown in this example for the letter "ä".
+
+## 1.0.8
+This version has updated attribute parsing to support more accurate display of user attributes. Multivalued attributes such as level of assurance is correctly supported.
+
+NameID valued attribute dispaly is now configurable. NameID values are random of nature and only applies to the unique combination of SP/IdP and normally lacks value as displayed attribute in a GUI. Display of such attributes is controlled by the following property in application.properties:
+
+> `sigsp.config.display-name-id-attributes=false`
+
+If not set, the default value is fasle.
