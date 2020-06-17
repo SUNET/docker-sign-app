@@ -1,6 +1,6 @@
 # Upload and sign application versions
 
-**Latest Current version: 1.0.9**
+**Latest Current version: 1.0.10**
 
 Version | Comment | Date
 ---|---|---
@@ -14,6 +14,7 @@ Version | Comment | Date
 1.0.7 | Relaxed check for valid values in SAML attributes to handle complex attriubtes | 2020-05-02
 1.0.8 | Updated attribute parsing | 2020-05-18
 1.0.9 | Removes any presence of "," sign in file names in downloaded files. | 2020-06-10
+1.0.10 | Added check that previously signed PDF files are signed using eduSign. | 2020-06-17
 
 ## Important Release Notes
 
