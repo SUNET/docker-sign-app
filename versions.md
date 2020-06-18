@@ -1,6 +1,6 @@
 # Upload and sign application versions
 
-**Latest Current version: 1.0.10**
+**Latest Current version: 1.0.11**
 
 Version | Comment | Date
 ---|---|---
@@ -15,6 +15,7 @@ Version | Comment | Date
 1.0.8 | Updated attribute parsing | 2020-05-18
 1.0.9 | Removes any presence of "," sign in file names in downloaded files. | 2020-06-10
 1.0.10 | Added check that previously signed PDF files are signed using eduSign. | 2020-06-17
+1.0.11 | Added config capability to list compatible pre-sign services. | 2020-06-17
 
 ## Important Release Notes
 
@@ -79,3 +80,14 @@ NameID valued attribute dispaly is now configurable. NameID values are random of
 > `sigsp.config.display-name-id-attributes=false`
 
 If not set, the default value is fasle.
+
+## 1.0.11
+
+This version adds a configuration property in `application.properties` for listing other compatible services that share the same PDF sign page setup.
+
+When this service is asked to sign a PDF document, the document to be signed can only be signed if the uploaded document has a compatible sign page where the signature image is added.
+
+To add another SP entityID representing a compatible service add the property `signservice.config.compatible-pre-sign-service-id[n]`, where `n` is the index of the identifier. Example:
+
+    `signservice.config.compatible-pre-sign-service-id[0]=eduSign`
+    `signservice.config.compatible-pre-sign-service-id[1]=https://example.com/compatible-service`
