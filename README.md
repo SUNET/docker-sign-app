@@ -1,6 +1,6 @@
 
 ---
-# CURRENT BUILD VERSION = 1.0.9
+# CURRENT BUILD VERSION = 1.0.11
 ---
 # docker-sig-app
 
@@ -78,13 +78,14 @@ Property | Value
 `tomcat.ajp.enabled`  |  true or false dependeing on whether AJP should be exposed
 `spring.servlet.multipart.max-file-size`  |  Sets the max file upload size. This value can be set to a maximum of 10 MB. Sizes larger than 10MB requires other measures to increase internal Spring Boot limitations.
 `sigsp.config.signpage`  |  Sets properties related to the sign page
+`sigsp.config.signpage.image.include-identifier-in-name`  |  A value of true includes the user ID in the user name. E.g. "John Doe (id-of-john-doe)" when included in a PDF sign image. A value of false excludes the uer ID from the displayed name.
 `signservice.pdf-signature-image.template`  |  Sets properties relatedto PDF sign image
 `sigsp.federation.metadata` | Properties for downloading, validating and caching SAML metadta
 `signservice.credential`  |  Properties for setting up the signing key for signing SignRequest to the signature service
 `signservice.config.default-sign-requester-id`  |  The EntityID of this application expressed as the sign requesting service in requests to the signing service.
 `signservice.config.sign-service-id`  |  The EntityID of the sign service  |
 `signservice.config.default-destination-url` |  The URL where the Sign Request to the sign service is sent.
-`sigsp.config.signpage.image.include-identifier-in-name`  |  A value of true includes the user ID in the user name. E.g. "John Doe (id-of-john-doe)" when included in a PDF sign image. A value of false excludes the uer ID from the displayed name.
+`signservice.config.compatible-pre-sign-service-id[n]` | zero or more identifiers of SP services compatible with this service in terms of SignPage usages. Only SP services listed here (own service are automatically included) are alloewd to have created the first signature for this service to accept to add another signature. 
 
 
 ## 3. Running the docker container
