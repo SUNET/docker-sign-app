@@ -1,6 +1,6 @@
 
 ---
-# CURRENT BUILD VERSION = 1.0.11
+# CURRENT BUILD VERSION = 1.0.12
 ---
 # docker-sig-app
 
@@ -85,7 +85,7 @@ Property | Value
 `signservice.config.default-sign-requester-id`  |  The EntityID of this application expressed as the sign requesting service in requests to the signing service.
 `signservice.config.sign-service-id`  |  The EntityID of the sign service  |
 `signservice.config.default-destination-url` |  The URL where the Sign Request to the sign service is sent.
-`signservice.config.compatible-pre-sign-service-id[n]` | zero or more identifiers of SP services compatible with this service in terms of SignPage usages. Only SP services listed here (own service are automatically included) are alloewd to have created the first signature for this service to accept to add another signature. 
+`signservice.config.compatible-pre-sign-service-id[n]` | zero or more identifiers of SP services compatible with this service in terms of SignPage usages. Only SP services listed here (own service are automatically included) are alloewd to have created the first signature for this service to accept to add another signature.
 
 
 ## 3. Running the docker container

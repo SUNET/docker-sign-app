@@ -1,6 +1,6 @@
 # Upload and sign application versions
 
-**Latest Current version: 1.0.11**
+**Latest Current version: 1.0.12**
 
 Version | Comment | Date
 ---|---|---
@@ -16,6 +16,7 @@ Version | Comment | Date
 1.0.9 | Removes any presence of "," sign in file names in downloaded files. | 2020-06-10
 1.0.10 | Added check that previously signed PDF files are signed using eduSign. | 2020-06-17
 1.0.11 | Added config capability to list compatible pre-sign services. | 2020-06-17
+1.0.12 | Fixed hardwired requested LoA. | 2020-10-21
 
 ## Important Release Notes
 
