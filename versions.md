@@ -1,6 +1,6 @@
 # Upload and sign application versions
 
-**Latest Current version: 1.0.12**
+**Latest Current version: 1.0.13**
 
 Version | Comment | Date
 ---|---|---
@@ -17,6 +17,7 @@ Version | Comment | Date
 1.0.10 | Added check that previously signed PDF files are signed using eduSign. | 2020-06-17
 1.0.11 | Added config capability to list compatible pre-sign services. | 2020-06-17
 1.0.12 | Fixed hardwired requested LoA. | 2020-10-21
+1.0.13 | Added extra logging. | 2020-10-22
 
 ## Important Release Notes
 
@@ -92,3 +93,5 @@ To add another SP entityID representing a compatible service add the property `s
 
     `signservice.config.compatible-pre-sign-service-id[0]=eduSign`
     `signservice.config.compatible-pre-sign-service-id[1]=https://example.com/compatible-service`
+
+**NOTE:** Old instances of sign service included a configured "ServiceID" string as the SP identifier in sign certificates. For backwards compatibility, these identifiers also need to be added to the list. This is demonstrated by the id "eduSign" in the example above. New installations of the sign service code includes the SP EntityID instead, illustrated by the second ID in the example. All new SP:s should be added in the form of EntityID URI:s.
