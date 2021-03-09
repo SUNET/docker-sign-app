@@ -1,6 +1,6 @@
 
 ---
-# CURRENT BUILD VERSION = 1.0.13
+# CURRENT BUILD VERSION = 1.0.14
 ---
 # docker-sig-app
 
@@ -86,6 +86,7 @@ Property | Value
 `signservice.config.sign-service-id`  |  The EntityID of the sign service  |
 `signservice.config.default-destination-url` |  The URL where the Sign Request to the sign service is sent.
 `signservice.config.compatible-pre-sign-service-id[n]` | zero or more identifiers of SP services compatible with this service in terms of SignPage usages. Only SP services listed here (own service are automatically included) are alloewd to have created the first signature for this service to accept to add another signature.
+`sigsp.config.session-expired-alert`  | Alert text shown if document upload is attempted when the login session has expired. If this parameter is set to an empty string, then no alert is shown. The default text is "Du har blivit utloggad på grund av inaktivitet" . Note that åäö must be represented as unicode characters (e.g. å is represented by \u00e5)
 
 
 ## 3. Running the docker container
