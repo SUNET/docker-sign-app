@@ -1,6 +1,6 @@
 
 ---
-# CURRENT BUILD VERSION = 1.0.12
+# CURRENT BUILD VERSION = 1.0.13
 ---
 # docker-sig-app
 
