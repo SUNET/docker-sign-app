@@ -1,6 +1,6 @@
 # Upload and sign application versions
 
-**Latest Current version: 1.0.14**
+**Latest Current version: 1.0.15**
 
 Version | Comment | Date
 ---|---|---
@@ -19,6 +19,7 @@ Version | Comment | Date
 1.0.12 | Fixed hardwired requested LoA. | 2020-10-21
 1.0.13 | Added extra logging. | 2020-10-22
 1.0.14  | Upload attempt when loginsession expirted now causes configurable alert and redirect to login page  | 2021-03-09
+1.0.15  | Fixed dependency problem  | 2021-03-12
 
 ## Important Release Notes
 
@@ -106,3 +107,7 @@ Default configuration is:
 > `sigsp.config.session-expired-alert`=Du har blivit utloggad p\u00e5 grund av inaktivitet
 
 Setting this parameter to an emtpy string, then user is redirected without showing any alert.
+
+## 1.0.15
+
+This version make use of the updated properties structure as demonstrated in the application.properties file in the upload-sign-sp sample configuration folder
