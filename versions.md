@@ -1,6 +1,6 @@
 # Upload and sign application versions
 
-**Latest Current version: 1.0.15**
+**Latest Current version: 1.1.0**
 
 Version | Comment | Date
 ---|---|---
@@ -18,8 +18,7 @@ Version | Comment | Date
 1.0.11 | Added config capability to list compatible pre-sign services. | 2020-06-17
 1.0.12 | Fixed hardwired requested LoA. | 2020-10-21
 1.0.13 | Added extra logging. | 2020-10-22
-1.0.14  | Upload attempt when loginsession expirted now causes configurable alert and redirect to login page  | 2021-03-09
-1.0.15  | Fixed dependency problem  | 2021-03-12
+1.1.0  | Upload attempt when loginsession expirted now causes configurable alert and redirect to login page  | 2021-03-09
 
 ## Important Release Notes
 
@@ -98,7 +97,9 @@ To add another SP entityID representing a compatible service add the property `s
 
 **NOTE:** Old instances of sign service included a configured "ServiceID" string as the SP identifier in sign certificates. For backwards compatibility, these identifiers also need to be added to the list. This is demonstrated by the id "eduSign" in the example above. New installations of the sign service code includes the SP EntityID instead, illustrated by the second ID in the example. All new SP:s should be added in the form of EntityID URI:s.
 
-## 1.0.14
+## 1.1.0
+
+This version make use of the updated properties structure as demonstrated in the application.properties file in the upload-sign-sp sample configuration folder
 
 This version includes new configuration option for alert message to be shown if an upload is attempted when the loginsession has expired.
 
@@ -107,7 +108,3 @@ Default configuration is:
 > `sigsp.config.session-expired-alert`=Du har blivit utloggad p\u00e5 grund av inaktivitet
 
 Setting this parameter to an emtpy string, then user is redirected without showing any alert.
-
-## 1.0.15
-
-This version make use of the updated properties structure as demonstrated in the application.properties file in the upload-sign-sp sample configuration folder
