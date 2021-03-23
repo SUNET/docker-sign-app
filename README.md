@@ -77,16 +77,29 @@ Property | Value
 `sigsp.config.login-button-html`  |  Optional property used to provide custom html for the login button. Example: `sigsp.config.login-button-html=<a href='../secure/main' class='btn btn-primary'>Login</a>``server.port`  |  Set the server port for the service. If TLS is used (port 8443) then the TLS settings must also be settings
 `tomcat.ajp.enabled`  |  true or false dependeing on whether AJP should be exposed
 `spring.servlet.multipart.max-file-size`  |  Sets the max file upload size. This value can be set to a maximum of 10 MB. Sizes larger than 10MB requires other measures to increase internal Spring Boot limitations.
-`sigsp.config.signpage`  |  Sets properties related to the sign page
+~~`sigsp.config.signpage`~~  |  ~~Sets properties related to the sign page~~<br />Is now set as part of the SignService policy configuration under `signservice.config.pdf-signature-pages`. See [application.properties](resources/upload-sign-sp/application.properties).
 `sigsp.config.signpage.image.include-identifier-in-name`  |  A value of true includes the user ID in the user name. E.g. "John Doe (id-of-john-doe)" when included in a PDF sign image. A value of false excludes the uer ID from the displayed name.
-`signservice.pdf-signature-image.template`  |  Sets properties relatedto PDF sign image
-`sigsp.federation.metadata` | Properties for downloading, validating and caching SAML metadta
+~~`signservice.pdf-signature-image.template`~~  |  ~~Sets properties relatedto PDF sign image~~<br />Is now set as part of the SignService policy configuration under `signservice.config.pdf-signature-image-templates`. See [application.properties](resources/upload-sign-sp/application.properties).
+`sigsp.federation.metadata` | Properties for downloading, validating and caching SAML metadata
 `signservice.credential`  |  Properties for setting up the signing key for signing SignRequest to the signature service
-`signservice.config.default-sign-requester-id`  |  The EntityID of this application expressed as the sign requesting service in requests to the signing service.
-`signservice.config.sign-service-id`  |  The EntityID of the sign service  |
-`signservice.config.default-destination-url` |  The URL where the Sign Request to the sign service is sent.
-`signservice.config.compatible-pre-sign-service-id[n]` | zero or more identifiers of SP services compatible with this service in terms of SignPage usages. Only SP services listed here (own service are automatically included) are alloewd to have created the first signature for this service to accept to add another signature.
+~~`signservice.config.default-sign-requester-id`~~  |  ~~The EntityID of this application expressed as the sign requesting service in requests to the signing service.~~<br />Replaced by `sigsp.sp.entityid` (see below).
+`sigsp.sp.entityid` | The EntityID of this application expressed as the sign requesting service in requests to the signing service.
+`signservice.config.sign-service-id`<sup>*</sup>  |  The EntityID of the sign service  |
+`signservice.config.default-destination-url`<sup>*</sup> |  The URL where the Sign Request to the sign service is sent.
+`signservice.config.compatible-pre-sign-service-id[n]` | Zero or more identifiers of SP services compatible with this service in terms of SignPage usages. Only SP services listed here (own service are automatically included) are allowed to have created the first signature for this service to accept to add another signature.
 `sigsp.config.session-expired-alert`  | Alert text shown if document upload is attempted when the login session has expired. If this parameter is set to an empty string, then no alert is shown. The default text is "Du har blivit utloggad på grund av inaktivitet" . Note that åäö must be represented as unicode characters (e.g. å is represented by \u00e5)
+
+> \[*\]: Only required if not using the SignService Integration REST service (see below).
+
+The application can also be configured to use the SignService Integration REST service for SignService integration. In the future, this will be the only option, but for now this is experimental. To turn on REST client support the following settings are essential:
+
+Property | Valie
+--- | ---
+`signservice.rest.enabled` | Whether REST client support is enabled or not (default is `false`).
+`signservice.rest.server-url` | The URL to the SignService Integration REST service.
+`signservice.rest.client-username` | The username for the REST client (when authenticating to the REST service).
+`signservice.rest.client-password` | The password for the REST client (when authenticating to the REST service).
+`signservice.default-policy-name` | The name of the SignService integration policy to use (must be configured by REST server).
 
 
 ## 3. Running the docker container
