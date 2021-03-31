@@ -88,6 +88,12 @@ signservice.config.default-sign-requester-id=${sigsp.sp.entityid}
 ```
 **Note:** The change of the policy name from `default` to `edusign` in the example is intentional.
 
+#### Modify stateless settings
+
+Modify the propety `signservice.config.stateless` and set its value to `true`.
+
+> signservice.config.stateless=true
+
 ### Step 3 - Sign page and sign image configuration changes
 
 #### Move configuration property "include-identifier-in-name"
